@@ -62,11 +62,13 @@ Extensões → Modificações
 ## 🔧 Exemplo de Requisição GET
 
 ```php
+$this->easy_api = new EasyApi('https://api.opencartmaster.com.br');
 $result = $this->easy_api->get(
-    'https://api.exemplo.com/produtos',
-    [
+    [   'Accept' => ' */*',
+        'Content-Type' => 'application/json',
         'Authorization' => 'Bearer TOKEN'
-    ]
+    ], 
+    '/v1/check'
 );
 ```
 
@@ -75,15 +77,17 @@ $result = $this->easy_api->get(
 ## 🔧 Exemplo de Requisição POST
 
 ```php
+$this->easy_api = new EasyApi('https://api.opencartmaster.com.br');
 $result = $this->easy_api->post(
-    'https://api.exemplo.com/produtos',
+    [   'Accept' => ' */*',
+        'Content-Type' => 'application/json',
+        'Authorization' => 'Bearer TOKEN'
+    ],
+    '/v1/check',
     [
         'nome'  => 'Produto Teste',
         'preco' => 99.90
     ],
-    [
-        'Authorization' => 'Bearer TOKEN'
-    ]
 );
 ```
 
@@ -92,11 +96,17 @@ $result = $this->easy_api->post(
 ## 🔧 Exemplo de Requisição PUT
 
 ```php
+$this->easy_api = new EasyApi('https://api.opencartmaster.com.br');
 $result = $this->easy_api->put(
-    'https://api.exemplo.com/produtos/1',
+    [   'Accept' => ' */*',
+        'Content-Type' => 'application/json',
+        'Authorization' => 'Bearer TOKEN'
+    ],
+    '/v1/check',
     [
-        'nome' => 'Produto Atualizado'
-    ]
+        'nome'  => 'Produto Novo Nome',
+        'preco' => 99.90
+    ],
 );
 ```
 
@@ -105,11 +115,16 @@ $result = $this->easy_api->put(
 ## 🔧 Exemplo de Requisição PATCH
 
 ```php
+$this->easy_api = new EasyApi('https://api.opencartmaster.com.br');
 $result = $this->easy_api->patch(
-    'https://api.exemplo.com/produtos/1',
+    [   'Accept' => ' */*',
+        'Content-Type' => 'application/json',
+        'Authorization' => 'Bearer TOKEN'
+    ],
+    '/v1/check',
     [
-        'status' => 'ativo'
-    ]
+        'quantidade'  => 2,
+    ],
 );
 ```
 
@@ -118,8 +133,13 @@ $result = $this->easy_api->patch(
 ## 🔧 Exemplo de Requisição DELETE
 
 ```php
+$this->easy_api = new EasyApi('https://api.opencartmaster.com.br');
 $result = $this->easy_api->delete(
-    'https://api.exemplo.com/produtos/1'
+     [   'Accept' => ' */*',
+        'Content-Type' => 'application/json',
+        'Authorization' => 'Bearer TOKEN'
+    ],
+    '/v1/check/1',
 );
 ```
 
@@ -131,7 +151,6 @@ $result = $this->easy_api->delete(
 Array
 (
     [status] => 200
-    [headers] => Array(...)
     [body] => {...}
 )
 ```
