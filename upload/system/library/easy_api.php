@@ -29,4 +29,9 @@ class EasyApi {
         return $resposta;
   }
 
+  public function get($header, $endpoint) {
+
+  return $this->request('GET', $header, $endpoint, '');
+  }
+
 }
