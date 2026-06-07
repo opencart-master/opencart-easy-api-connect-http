@@ -4,7 +4,7 @@
  * @author		Denis Cunha
  * @copyright	Copyright (c) 2005 - 2026, OpenCart, Ltd. (https://www.opencart.com/)
  * @license		https://opensource.org/license/mit
- * @link		https://www.opencartmaster.com.br
+ * @link		  https://www.opencartmaster.com.br
 */
 class EasyApi {
   private $url;
@@ -48,5 +48,5 @@ class EasyApi {
   public function delete($header, $endpoint) {
     return $this->request('DELETE', $header, $endpoint, '');
   }
-  
+
 }
