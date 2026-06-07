@@ -45,4 +45,8 @@ class EasyApi {
     return $this->request('PUT', $header, $endpoint, $data);
   }
 
+  public function delete($header, $endpoint) {
+    return $this->request('DELETE', $header, $endpoint, '');
+  }
+  
 }
