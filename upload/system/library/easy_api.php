@@ -41,5 +41,8 @@ class EasyApi {
     return $this->request('PATCH', $header, $endpoint, $data);
   }
   
+  public function put($header, $endpoint, $data) {
+    return $this->request('PUT', $header, $endpoint, $data);
+  }
 
 }
