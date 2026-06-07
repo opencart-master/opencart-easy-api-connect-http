@@ -7,7 +7,7 @@
  * @link		https://www.opencartmaster.com.br
 */
 class EasyApi {
-    private $url;
+  private $url;
 
   public function __construct($url) {
 		$this->url = $url;
@@ -36,5 +36,10 @@ class EasyApi {
   public function post($header, $endpoint, $data) {
     return $this->request('POST', $header, $endpoint, $data);
   }
+
+  public function patch($header, $endpoint, $data) {
+    return $this->request('PATCH', $header, $endpoint, $data);
+  }
+  
 
 }
